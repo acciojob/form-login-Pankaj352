@@ -1,5 +1,5 @@
-document.getElementById("form1").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent page refresh
+function getFormvalue(event) {
+    event.preventDefault(); // Prevent form submission refresh
 
     let firstName = document.querySelector('input[name="fname"]').value.trim();
     let lastName = document.querySelector('input[name="lname"]').value.trim();
@@ -10,4 +10,7 @@ document.getElementById("form1").addEventListener("submit", function(event) {
     }
 
     alert(`${firstName} ${lastName}`);
-});
+}
+
+// Make function available globally for Cypress
+window.getFormvalue = getFormvalue;
